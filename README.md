@@ -10,7 +10,7 @@ It's intended to be used in a hub and spoke AWS Account architecture where there
 
 ## Architecture
 
-![diagram](diagram.png)
+![diagram](https://raw.githubusercontent.com/lorenzoaiello/terraform-aws-vpc-enterprise/master/diagram.png)
 
 ## Resources Created
 
