@@ -32,7 +32,7 @@ It's intended to be used in a hub and spoke AWS Account architecture where there
 
 ```hcl-terraform
 module "enterprise-vpc" {
-  source                       = "lorenzoaiello/aws-vpc-enterprise/aws"
+  source                       = "lorenzoaiello/vpc-enterprise/aws"
   version                      = "x.y.z"
   name                         = "myVPCName"
   routable_vpc_cidr            = "10.134.0.0/24"
