@@ -23,6 +23,9 @@ jobs:
       with:
         terraform_version: ${{ matrix.version }}
         
+    - name: Terraform Init
+      run: terraform init
+      
     - name: Terraform FMT
       run: terraform fmt -check
       
