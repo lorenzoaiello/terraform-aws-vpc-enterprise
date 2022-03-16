@@ -1,0 +1,30 @@
+name: Version Compatibility
+on:
+  push:
+    branches: [ master, testing ]
+  pull_request:
+    branches: [ master ] 
+  schedule:
+    - cron: '35 20 * * 4'
+
+jobs:
+  tflint:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        version: [latest, '~1.1', '~1.0', '~0.15', '~0.14', '~0.13', '~0.12']
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout source code
+
+    - uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: ${{ matrix.version }}
+        
+    - name: Terraform FMT
+      run: terraform fmt -check
+      
+    - name: Terraform Validate
+      run: terraform validate
