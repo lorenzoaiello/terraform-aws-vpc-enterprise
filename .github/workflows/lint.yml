@@ -1,9 +1,9 @@
 name: Linting
 on:
   push:
-    branches: [ master, testing ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ] 
+    branches: [ main ] 
 
 jobs:
   tflint:
